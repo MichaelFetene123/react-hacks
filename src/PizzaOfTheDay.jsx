@@ -6,7 +6,7 @@ const intl = new Intl.NumberFormat("en-US", {
 });
 
 const PizzaOfTheDay = () => {
-    
+  const pizzaOfTheDay = usePizzaOfTheDay();
 };
 
 export default PizzaOfTheDay;
