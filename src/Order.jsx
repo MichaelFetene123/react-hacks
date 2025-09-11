@@ -1,10 +1,22 @@
 import Pizza from "./Pizza";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+const intl = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+});
 
 export default function Order() {
+  const [pizzaTypes, setPizzaTypes] = useState([]);
   const [pizzaType, setPizzaType] = useState("pepperoni");
-    const [pizzaSize, setPizzaSize] = useState("M");
-    console.log(pizzaType, pizzaSize);
+  const [pizzaSize, setPizzaSize] = useState("M");
+  const [loading, setLoading] = useState(true);
+
+  let price, selectedPizza;
+
+  if (!loading) {
+    selectedPizza = pizzaTypes.find((pizza) => pizzaType === pizza.id);
+  }
 
   return (
     <div className="order">
