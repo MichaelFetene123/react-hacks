@@ -13,6 +13,10 @@ const PizzaOfTheDay = () => {
   }
 };
 
-return <div className="pizza-of-the-day"></div>;
+return (
+  <div className="pizza-of-the-day">
+    <h2>Pizza of the Day</h2>
+  </div>
+);
 
 export default PizzaOfTheDay;
