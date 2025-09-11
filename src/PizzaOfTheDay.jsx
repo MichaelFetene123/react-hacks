@@ -13,8 +13,6 @@ const PizzaOfTheDay = () => {
   }
 };
 
-return (
-  
-)
+return <div className="pizza-of-the-day"></div>;
 
 export default PizzaOfTheDay;
