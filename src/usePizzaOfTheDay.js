@@ -1,6 +1,6 @@
 import { useState , useEffect } from 'react';
 
-export default function usePizzaOfTheDay() { 
+export  const usePizzaOfTheDay = () =>{ 
 
     const [pizzaOfTheDay, setPizzaOfTheDay] = useState(null);
 
