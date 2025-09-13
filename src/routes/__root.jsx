@@ -19,7 +19,3 @@ export const Route = createRootRoute({
     );
   },
 });
-
-export default function __root() {
-  return <div>__root</div>;
-}
