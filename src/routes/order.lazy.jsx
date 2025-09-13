@@ -1,7 +1,7 @@
-import Pizza from "./Pizza";
+import Pizza from "../Pizza";
 import { useState, useEffect, useContext } from "react";
-import Cart from "./Cart";
-import { CartContext } from "./Contexts";
+import Cart from "../Cart";
+import { CartContext } from "../Contexts";
 
 const intl = new Intl.NumberFormat("en-US", {
   style: "currency",
