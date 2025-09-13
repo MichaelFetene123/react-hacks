@@ -3,7 +3,7 @@ import { CartContext } from './Contexts';
 
 export default function Header() {
 
-  const [ cart] = useContext(CartContext);
+  const [cart] = useContext(CartContext);
 
   return (
     <nav>
