@@ -1,6 +1,9 @@
-
+import { useContext } from 'react';
+import { CartContext } from './Contexts';
 
 export default function Header() {
+
+  const [ cart] = useContext(CartContext);
 
   return (
     <nav>
@@ -8,7 +11,7 @@ export default function Header() {
               Padre Gino's Pizza 
           </h1>
           <div className="nav-cart">
-              🛒<span className="nav-cart-number">5</span>
+        🛒<span className="nav-cart-number">{ cart.length}</span>
           </div>
     </nav>
   );
