@@ -114,7 +114,7 @@ export default function Order() {
           )}
         </form>
       </div>
-        {loading ? <h2>Loading...</h2> : <Cart cart={cart} />}
+        {loading ? <h2>Loading...</h2> : <Cart cart={cart} />}  
     </div>
   );
 }
