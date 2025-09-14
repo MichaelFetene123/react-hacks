@@ -1,8 +1,8 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from '@tanstack/react-router'
 
-export const Route = createFileRoute("/index/layz")({
+export const Route = createFileRoute('/')({
   component: Index,
-});
+})
 
 function Index() {
   return (
@@ -20,5 +20,5 @@ function Index() {
         </li>
       </ul>
     </div>
-  );
+  )
 }
