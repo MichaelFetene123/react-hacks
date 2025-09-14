@@ -22,4 +22,6 @@ function PastOrdersRoute() {
       </div>
     );
   }
+
+  return <div className="past-orders"></div>;
 }
