@@ -10,7 +10,7 @@ export const Route = createLazyFileRoute("/past")({
 
 function PastOrdersRoute() {
   const [page, setPage] = useState(1);
-  const { isLoading, isError } = useQuery({
+  const { isLoading, data } = useQuery({
     queryKey: ["past-orders", page],
     queryFn: () => getPastOrders(page),
     staleTime: 30000,
@@ -23,5 +23,26 @@ function PastOrdersRoute() {
     );
   }
 
-  return <div className="past-orders"></div>;
+  return (
+    <div className="past-orders">
+      <table>
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>Date</td>
+            <td>Time</td>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((order) => (
+            <tr key={order.order_id}>
+              <td>{order.order_id}</td>
+              <td>{order.date}</td>
+              <td>{order.time}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 }
