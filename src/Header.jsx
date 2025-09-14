@@ -7,7 +7,7 @@ export default function Header() {
 
   return (
     <nav>
-      <Link to="/index/lazy">
+      <Link to="/">
         <h1 className="logo">Padre Gino's Pizza</h1>
       </Link>
       <div className="nav-cart">
