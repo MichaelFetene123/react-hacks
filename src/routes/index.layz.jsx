@@ -1,23 +1,24 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
+import { createFileRoute, Link } from "@tanstack/react-router";
 
-export const Route = createFileRoute('/index/layz')({
+export const Route = createFileRoute("/index/layz")({
   component: Index,
-})
+});
 
 function Index() {
   return (
-    <div className='index'>
-          <div className='index-brand'>
-              <h1>Padre Gino's</h1>
-              <p>Pizza & Art at a location near you</p>
-          </div>
-          <ul>
-              <li>
-                    <Link to='/order'>Order</Link>
-              </li> <li>
-                    <Link to='/past'>Past Order</Link>
-              </li> 
-          </ul>
+    <div className="index">
+      <div className="index-brand">
+        <h1>Padre Gino's</h1>
+        <p>Pizza & Art at a location near you</p>
+      </div>
+      <ul>
+        <li>
+          <Link to="/order">Order</Link>
+        </li>
+        <li>
+          <Link to="/past">Past Order</Link>
+        </li>
+      </ul>
     </div>
-  )
+  );
 }
