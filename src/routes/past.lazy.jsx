@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { createLazyFileRoute } from "@tanstack/react-router";
 import getPastOrders from "../api/getPastOrders.js";
 import getPastOrder from "../api/getPastOrder.js";
-import Model from "../Model";
+import Model from "../Model.jsx";
 import { priceConverter } from "./../useCurrency";
 
 export const Route = createLazyFileRoute("/past")({
