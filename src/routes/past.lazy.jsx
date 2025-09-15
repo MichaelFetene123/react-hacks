@@ -18,6 +18,14 @@ function PastOrdersRoute() {
     queryFn: () => getPastOrders(page),
     staleTime: 30000,
   });
+
+  const { isLoading: isLoadingPastOrder, data: pastOrderData } = useQuery({
+    queryKey: ["past-order", focusedOrder],
+    queryFn: () => getPastOrder(focusedOrder),
+    staleTime: 86400000, // 1 day in milliseconds
+    enabled: !!focusedOrder, // Only run this query if focusedOrder is not
+  });
+
   if (isLoading) {
     return (
       <div className="past-orders">
