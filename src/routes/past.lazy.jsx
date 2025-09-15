@@ -95,6 +95,7 @@ function PastOrdersRoute() {
           ) : (
             <p>Loading ...</p>
           )}
+          <button onClick={() => setFocusedOrder()}>Close</button>
         </Model>
       ) : null}
     </div>
