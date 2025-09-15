@@ -2,10 +2,9 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { createLazyFileRoute } from "@tanstack/react-router";
 import getPastOrders from "../api/getPastOrders.js";
-import is from "./../../node_modules/typescript/lib/_tsc";
 
 export const Route = createLazyFileRoute("/past")({
-  component: () => PastOrdersRoute,
+  component: PastOrdersRoute,
 });
 
 function PastOrdersRoute() {
@@ -46,6 +45,9 @@ function PastOrdersRoute() {
       <div className="pages">
         <button disabled={page <= 1} onClick={() => setPage(page - 1)}>
           Previous
+        </button>
+        <button disabled={data.length < 10} onClick={() => setPage(page + 1)}>
+          Next
         </button>
       </div>
     </div>
