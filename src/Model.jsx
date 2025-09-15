@@ -10,7 +10,7 @@ const Model = ({ children }) => {
     useEffect(() => { 
         const modelRoot = document.getElementById("model");
         modelRoot.appendChild(elRef.current);
-        return "TODO"
+        return () => modelRoot.removeChild(elRef.current);
     }, []);
     
     return createPortal(<div>{children}</div>, elRef.current);
