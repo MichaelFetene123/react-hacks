@@ -2,15 +2,28 @@ import { Component } from "react";
 import { Link } from "@tanstack/react-router";
 
 class ErrorBoundary extends Component {
-  state = { hasError: false };
+    state = { hasError: false };
+    constructor(props) {
+        super(props);
+        this.celebrateError = this.celebrateError.bind(this); 
+        
+  }
   static getDerivedStateFromError() {
     return { hasError: true };
   }
   componentDidCatch(error, info) {
     // send to TrackJS or Sentry
     console.error("ErrorBoundary caught some stupid error", error, info);
+    }
+    componentDidMount() { }
+    componentWillUnmount() { }
+    componentDidUpdate() { }
+celebrateError = () => {
+    this.setState({ celebration: "lol" });
   }
-  render() {
+
+    render() {
+      console.log(this.props.lol )
     if (this.state.hasError) {
       return (
         <div className="error-boundary">
