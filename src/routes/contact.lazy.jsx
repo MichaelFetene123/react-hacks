@@ -22,6 +22,13 @@ function ContactRoute() {
   return (
     <div className="contact">
       <h2>Contact </h2>
+      {mutation.isSuccess ? (
+        <h3>Submitted! </h3>
+      ) : (
+          <form onSubmit={mutation.mutate}>
+            
+          </form>
+      )}
     </div>
   );
 }
