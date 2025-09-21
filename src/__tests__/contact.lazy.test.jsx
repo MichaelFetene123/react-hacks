@@ -3,7 +3,6 @@ import { expect, test, vi } from "vitest";
 import createFetchMock from "vitest-fetch-mock";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { Route } from "../routes/contact.lazy";
-import { name } from "./../../node_modules/vitest/dist/chunks/creator.CBPphXqR";
 
 const queryClient = new QueryClient();
 
@@ -13,12 +12,12 @@ fetchMocker.enableMocks();
 test("can submit contact form", async () => {
   fetchMocker.mockResponse(JSON.stringify({ status: "ok" }));
   const screen = render(
-    <QueryClientProvider queryClient={queryClient}>
+    <QueryClientProvider client={queryClient}>
       <Route.options.component />
     </QueryClientProvider>
   );
 
-  const nameInput = screen.getAllByPlaceholderText("Name");
+  const nameInput = screen.getByPlaceholderText("Name");
   const emailInput = screen.getByPlaceholderText("Email");
   const msgTextArea = screen.getByPlaceholderText("Message");
 
@@ -34,4 +33,17 @@ test("can submit contact form", async () => {
 
   const btn = screen.getByRole("button");
   btn.click();
+
+  const h3 = await screen.findByRole("heading", { level: 3 });
+
+  expect(h3.textContent).toContain("Submitted");
+
+  const requests = fetchMocker.requests();
+  expect(requests.length).toBe(1);
+  expect(requests[0].url).toBe("/api/contact");
+  expect(fetchMocker).toHaveBeenCalledWidth("/api/contact", {
+    body: JSON.stringify(testData),
+    headers: { "Content-Type": " application/json" },
+    method: "POST",
+  });
 });
