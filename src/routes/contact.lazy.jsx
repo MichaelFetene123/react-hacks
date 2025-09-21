@@ -3,7 +3,7 @@ import { useMutation } from "@tanstack/react-query";
 import postContact from "../api/postContact.js";
 
 export const Route = createLazyFileRoute("/contact")({
-  component: () => ContactRoute,
+  component: () => <ContactRoute/> ,
 });
 
 function ContactRoute() {
@@ -25,9 +25,13 @@ function ContactRoute() {
       {mutation.isSuccess ? (
         <h3>Submitted! </h3>
       ) : (
-          <form onSubmit={mutation.mutate}>
-            
-          </form>
+        <form onSubmit={mutation.mutate}>
+          <input name="name" placeholder="Name" />
+          <input type="email" name="email" placeholder="Email" />
+          <input name="name" placeholder="name" />
+          <textarea placeholder="Message" name="message"></textarea>
+          <button type="submit">Submit</button>
+        </form>
       )}
     </div>
   );
