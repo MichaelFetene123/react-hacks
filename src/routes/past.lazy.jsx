@@ -20,6 +20,7 @@ function ErrorBoundaryWrappedPastOrderRoutes(props) {
 }
 
 function PastOrdersRoute() {
+  
   const [page, setPage] = useState(1);
   const [focusedOrder, setFocusedOrder] = useState(null);
   const { isLoading, data } = useQuery({
