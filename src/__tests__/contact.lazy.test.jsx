@@ -22,8 +22,8 @@ test("can submit contact form", async () => {
   const msgTextArea = screen.getByPlaceholderText("Message");
 
   const testData = {
-    name: " Brian",
-    email: " brian@gmail.com",
+    name: "Brian",
+    email: "brian@gmail.com",
     message: "hello there",
   };
 
@@ -41,9 +41,9 @@ test("can submit contact form", async () => {
   const requests = fetchMocker.requests();
   expect(requests.length).toBe(1);
   expect(requests[0].url).toBe("/api/contact");
-  expect(fetchMocker).toHaveBeenCalledWidth("/api/contact", {
+  expect(fetchMocker).toHaveBeenCalledWith("/api/contact", {
     body: JSON.stringify(testData),
-    headers: { "Content-Type": " application/json" },
+    headers: { "Content-Type": "application/json" },
     method: "POST",
   });
 });

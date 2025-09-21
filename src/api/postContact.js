@@ -2,7 +2,7 @@ export default async function postContact(name, email, message) {
   const response = await fetch("/api/contact", {
     method: "POST",
     headers: {
-      "Content-Type": " application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({ name, email, message }),
   });
@@ -10,5 +10,5 @@ export default async function postContact(name, email, message) {
     throw new Error("Network response was not ok. Send help.");
   }
 
-  return await response.json;
+  return await response.json();
 }
