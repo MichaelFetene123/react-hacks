@@ -10,5 +10,5 @@ export default async function postContact(name, email, message) {
         throw new Error("Network response was not ok. Send help.")
     }
 
-    return response.json
+    return await response.json
 }
