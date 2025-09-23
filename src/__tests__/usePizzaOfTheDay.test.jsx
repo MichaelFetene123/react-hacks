@@ -22,4 +22,8 @@ function getPizzaOfTheDay() {
     pizza = usePizzaOfTheDay();
     return null;
   }
+
+  render(<TestComponent />);
+
+  return pizza;
 }
