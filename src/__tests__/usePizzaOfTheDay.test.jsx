@@ -5,3 +5,12 @@ import { usePizzaOfTheDay } from "./../usePizzaOfTheDay.js";
 
 const fetchMocker = createFetchMock(vi);
 fetchMocker.enableMocks();
+
+const testPizza = {
+  id: "calabrese",
+  name: "The Calabrese Pizza",
+  category: "Supreme",
+  Description: "lol pizza from Calabria",
+  image: "/pizzas/pizzas/calabrese.webp",
+  size: { S: 12.25, M: 16.25, L: 20.25 },
+};
