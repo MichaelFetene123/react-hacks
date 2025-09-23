@@ -30,6 +30,6 @@ function getPizzaOfTheDay() {
 
 test("gives null when first called", async () => {
   fetch.mockResponseOnce(JSON.stringify(testPizza));
-  const pizza = getPizzaOfTheDay();
-  expect(pizza).toBeNull();
+  const { result } = renderHook(() => usePizzaOfTheDay());
+  expect(result.current).toBeNull();
 });
