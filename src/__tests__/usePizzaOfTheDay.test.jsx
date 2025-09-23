@@ -14,3 +14,12 @@ const testPizza = {
   image: "/pizzas/pizzas/calabrese.webp",
   size: { S: 12.25, M: 16.25, L: 20.25 },
 };
+
+function getPizzaOfTheDay() {
+  let pizza;
+
+  function TestComponent() {
+    pizza = usePizzaOfTheDay();
+    return null;
+  }
+}
