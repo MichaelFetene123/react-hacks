@@ -27,3 +27,5 @@ function getPizzaOfTheDay() {
 
   return pizza;
 }
+
+test("gives null when first called", async () => {});
