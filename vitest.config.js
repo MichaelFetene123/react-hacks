@@ -9,5 +9,18 @@ export default defineWorkspace([
             name: "happy-dom",
             environment: "happy-dom"
         }
+    },
+    {
+        extends: "./vite.config.js",
+        test: {
+            setupFiles: ["vitest-browser-react"],
+            include: ["**/*.browser.test.{js, jsx}"],
+            name: "browser",
+            browser: {
+                provider: "playwright",
+                enabled: true,
+            }
+
+        }
     }
 ])
