@@ -1,7 +1,7 @@
 import { expect, test, vi } from "vitest";
 import { renderHook, waitFor } from "@testing-library/react";
 import createFetchMock from "vitest-fetch-mock";
-import { usePizzaOfTheDay } from "./../usePizzaOfTheDay.js";
+import { usePizzaOfTheDay } from "../usePizzaOfTheDay.js";
 
 const fetchMocker = createFetchMock(vi);
 fetchMocker.enableMocks();
