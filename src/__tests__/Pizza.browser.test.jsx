@@ -4,7 +4,7 @@ import Pizza from "../Pizza";
 
 test("alt text renders on  image", async () => {
   const name = "My Favorite Pizza";
-  const src = "https://picsum.photo/200";
+  const src = "https://picsum.photos/200";
   const screen = render(
     <Pizza name={name} image={src} description="cool browser stuff" />
   );
