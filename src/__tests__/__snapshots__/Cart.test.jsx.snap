@@ -1,5 +1,20 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`lol 1`] = `
+{
+  "Description": "lol pizza from Calabria",
+  "category": "Supreme",
+  "id": "calabrese",
+  "image": "/pizzas/pizzas/calabrese.webp",
+  "name": "The Calabrese Pizza",
+  "size": {
+    "L": 20.25,
+    "M": 16.25,
+    "S": 12.25,
+  },
+}
+`;
+
 exports[`snapshot with nothing in cart  1`] = `
 <DocumentFragment>
   <div
