@@ -1,9 +1,10 @@
+import { useFormStatus } from "react-dom";
 import { createLazyFileRoute } from "@tanstack/react-router";
 import { useMutation } from "@tanstack/react-query";
 import postContact from "../api/postContact.js";
 
 export const Route = createLazyFileRoute("/contact")({
-  component: () => <ContactRoute/> ,
+  component: () => <ContactRoute />,
 });
 
 function ContactRoute() {
@@ -18,7 +19,7 @@ function ContactRoute() {
   });
 
   if (mutation.isError) {
-    return <h1>lol no </h1>
+    return <h1>lol no </h1>;
   }
 
   return (
