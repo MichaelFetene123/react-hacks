@@ -2,6 +2,7 @@ import { useFormStatus } from "react-dom";
 import { createLazyFileRoute } from "@tanstack/react-router";
 import { useMutation } from "@tanstack/react-query";
 import postContact from "../api/postContact.js";
+import { type } from "./../../node_modules/@tanstack/react-router/node_modules/@tanstack/react-store/dist/esm/index.d";
 
 export const Route = createLazyFileRoute("/contact")({
   component: () => <ContactRoute />,
@@ -18,10 +19,6 @@ function ContactRoute() {
     },
   });
 
-  if (mutation.isError) {
-    return <h1>lol no </h1>;
-  }
-
   return (
     <div className="contact">
       <h2>Contact </h2>
@@ -29,12 +26,24 @@ function ContactRoute() {
         <h3>Submitted! </h3>
       ) : (
         <form action={mutation.mutate}>
-          <input name="name" placeholder="Name" />
-          <input type="email" name="email" placeholder="Email" />
+          <ContactInput type="text" name="name" placeholder="Name" />
+          <ContactInput type="email" name="email" placeholder="Email" />
           <textarea placeholder="Message" name="message"></textarea>
           <button type="submit">Submit</button>
         </form>
       )}
     </div>
+  );
+}
+
+function ContactInput(props) {
+  const { pending } = useFormStatus();
+  return (
+    <input
+      disabled={pending}
+      name={props.name}
+      type={props.type}
+      placeholder={props.placeholder}
+    />
   );
 }
