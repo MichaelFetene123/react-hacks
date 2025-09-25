@@ -38,23 +38,15 @@ function ErrorBoundaryWrappedPastOrderRoutes(props) {
   );
 }
 
-function PastOrdersRoute({page, setPage, loadedPromise}) {
+function PastOrdersRoute({ page, setPage, loadedPromise }) {
   const [focusedOrder, setFocusedOrder] = useState(null);
-const data = use(loadedPromise);
+  const data = use(loadedPromise);
   const { isLoading: isLoadingPastOrder, data: pastOrderData } = useQuery({
     queryKey: ["past-order", focusedOrder],
     queryFn: () => getPastOrder(focusedOrder),
     staleTime: 86400000, // 1 day in milliseconds
     enabled: !!focusedOrder, // Only run this query if focusedOrder is not
   });
-
-  if (isLoading) {
-    return (
-      <div className="past-orders">
-        <h2>LOADING ...</h2>
-      </div>
-    );
-  }
 
   return (
     <div className="past-orders">
