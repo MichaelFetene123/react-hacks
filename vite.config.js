@@ -15,7 +15,18 @@ export default defineConfig({
       },
     },
   },
-  plugins: [TanStackRouterVite(), react()],
+  plugins: [TanStackRouterVite(), react({
+    bable: {
+      plugins: [ 
+        [
+          "babel-plugin-react-compiler",
+          {
+            target: "19",
+          }
+        ]
+      ]
+    }
+  })],
   test: {
     environment: "happy-dom",
     coverage: {
